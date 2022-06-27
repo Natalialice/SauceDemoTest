@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
     public void userShouldLoginWithValidCredentials() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-        assertTrue(driver.findElement(By.cssSelector(".title")).isDisplayed(), "User was not logged in");
+        assertTrue(productsPage.getTitle().isDisplayed(), "User was not logged in");
     }
 
 

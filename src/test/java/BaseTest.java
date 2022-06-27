@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.pages.LoginPage;
+import org.example.pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +12,7 @@ public class BaseTest {
 
     WebDriver driver;
     LoginPage loginPage;
-
+ProductsPage productsPage;
     @BeforeMethod
     public void setUp() {
         //Initialize web driver and create driver instance
@@ -23,6 +24,7 @@ public class BaseTest {
         driver.get("https://www.saucedemo.com/");
         //Create pages
         loginPage = new LoginPage(driver);
+        productsPage = new ProductsPage (driver);
     }
 
     @AfterMethod(alwaysRun = true)
