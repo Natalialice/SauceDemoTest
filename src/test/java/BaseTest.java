@@ -12,7 +12,8 @@ public class BaseTest {
 
     WebDriver driver;
     LoginPage loginPage;
-ProductsPage productsPage;
+    ProductsPage productsPage;
+
     @BeforeMethod
     public void setUp() {
         //Initialize web driver and create driver instance
@@ -21,10 +22,9 @@ ProductsPage productsPage;
         //Set up driver settings
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.saucedemo.com/");
         //Create pages
         loginPage = new LoginPage(driver);
-        productsPage = new ProductsPage (driver);
+        productsPage = new ProductsPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

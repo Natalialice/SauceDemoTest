@@ -15,11 +15,10 @@ public class LoginTest extends BaseTest {
         assertTrue(productsPage.getTitle().isDisplayed(), "User was not logged in");
     }
 
-
     @Test
     public void passwordShouldBeRequiredForLogin() {
+        loginPage.open();
         loginPage.login("standard_user", "");
-        WebElement error = driver.findElement(By.cssSelector("h3[data-test=error]"));
         assertEquals(loginPage.getError(), "Epic sadface: Password is required", "The error is incorrect");
     }
 
