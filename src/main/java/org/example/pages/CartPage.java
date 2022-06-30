@@ -2,10 +2,7 @@ package org.example.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
-import static org.testng.Assert.assertTrue;
 
 public class CartPage extends BasePage {
 
@@ -21,6 +18,7 @@ public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
+
     public void open() {
         driver.get(BASE_URL + "cart.html");
     }

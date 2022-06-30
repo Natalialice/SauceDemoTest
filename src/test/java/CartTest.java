@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class CartTest extends BaseTest{
+public class CartTest extends BaseTest {
     @Test
     public void productsAddedToCart() {
         loginPage.open();

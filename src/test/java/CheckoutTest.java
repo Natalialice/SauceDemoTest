@@ -1,20 +1,18 @@
-
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class ProductsTest extends BaseTest {
-
+public class CheckoutTest extends BaseTest {
     @Test
-    public void productsShouldBeAddedToCart() {
+    public void fillCheckoutForm() {
         loginPage.open();
         loginPage.loginAsStandardUser();
         productsPage.addToCart("Sauce Labs Backpack");
         driver.findElement(By.className("shopping_cart_link")).click();
-        assertTrue(productsPage.getTitle().isDisplayed(), "User did not get into the cart ");
+        driver.findElement(By.id("checkout")).click();
+        checkoutPage.FormCheckout("djfghdfj", "htg", "123456");
+        // assertTrue(checkoutOverviewPage.getTitle().isDisplayed(), "");
 
     }
 }
-
-

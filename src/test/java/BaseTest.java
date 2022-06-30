@@ -31,14 +31,14 @@ public class BaseTest {
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
+
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
-
-//    @AfterMethod(alwaysRun = true)
-//    public void tearDown()
-//    {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
 
