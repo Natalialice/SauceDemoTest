@@ -33,12 +33,12 @@ public class BaseTest {
         checkoutPage = new CheckoutPage(driver);
 
     }
-
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//
+//    @AfterMethod(alwaysRun = true)
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }
 

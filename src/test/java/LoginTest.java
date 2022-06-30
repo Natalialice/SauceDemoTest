@@ -14,7 +14,12 @@ public class LoginTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         assertTrue(productsPage.getTitle().isDisplayed(), "User was not logged in");
     }
-
+    @Test
+    public void UserNameShouldBeRequiredForLogin() {
+        loginPage.open();
+        loginPage.login("", "");
+        assertEquals(loginPage.getError(), "Epic sadface: Username is required", "The error is incorrect");
+    }
     @Test
     public void passwordShouldBeRequiredForLogin() {
         loginPage.open();
